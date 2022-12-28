@@ -6,11 +6,11 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 10:26:07 by alouzizi          #+#    #+#             */
-/*   Updated: 2022/12/27 23:21:52 by alouzizi         ###   ########.fr       */
+/*   Updated: 2022/12/28 17:24:42 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 void Contact::set_fname(std::string value){firstname = value;};
 std::string Contact::get_fname(){return firstname;};
@@ -33,41 +33,47 @@ void PhoneBook::set(std::string list[5], int i){
     contact[i].set_lname(list[1]);
     contact[i].set_nickname(list[2]);
     contact[i].set_num(list[3]);
-    contact[i].set_num(list[4]);
-    };
+    contact[i].set_ds(list[4]);
+};
 
-std::string PhoneBook::get(int i) {
-  std::string str;
-  str += "First name: " + contact[i].get_fname() + "\n";
-  str += "Nickname: " + contact[i].get_lname() + "\n";
-  str += "Last name: " + contact[i].get_nickname() + "\n";
-  str += "Phone number: " + contact[i].get_num() + "\n";
-  str += "Darkest secret: " + contact[i].get_ds() + "\n";
+std::string PhoneBook::get(int i, int j) {
+	std::string str;
+
+	if(contact[i].get_fname().empty())
+		return str;
+	if (j == 1)
+		str = contact[i].get_fname();
+	if (j == 2)
+		str = contact[i].get_lname();
+	if (j == 3)
+		str = contact[i].get_nickname();
+	if (j == 4)
+		str = contact[i].get_num();
+	if(j == 5)
+		str = contact[i].get_ds();
   return str;
 }
 
-int	main()
+void	ft_print(std::string value)
 {
-	std::string name;
-	PhoneBook ok;
-	std::string list[5];
+	if (value.size() > 10)
+    	std::cout << std::setw(9)<< value.substr(0, 9) << ".";
+  	else
+		std::cout<< std::setw(10) << value;
+	std::cout << "|";
+}
+
+std::string get_lien(std::string s)
+{
+	std::string	value;
 	while(1)
 	{
-		std::cout << ": Add | SEARCH | EXIT: ";
-		if (!getline (std::cin,name))
-			return (-1);
-		if (name.compare("Add") == 0)
-		{
-			// save a new contact
-		}
-		if (name.compare("SEARCH") == 0)
-		{
-			// display a specific contact
-		}
-		if (name.compare("EXIT") == 0)
-		{
-			// The program quits and the contacts are lost forever!
-			return (0);
-		}
-	}	
+		std::cout<< s;
+		if (!getline(std::cin, value))
+			exit (1);
+		if (!value.empty())
+			break;
+		std::cout << "This element is empty.\n";
+	}
+	return (value);
 }

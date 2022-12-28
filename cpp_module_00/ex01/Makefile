@@ -1,14 +1,26 @@
-NAME = phonebook
+NAME = Phonebook
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+SRC     =  main.cpp\
+        Phonebook.cpp\
 
-CC = c++
+CXX = c++
+
+CFLAGS = -Wall -Wextra -Werror
+DFLAGS = -std=c++98
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
-$(NAME):
-		$(CC)  phonebook.cpp -o $(NAME)
-clean : 
-	rm $(NAME)
-fclean :
-	rm $(NAME)
-re :clean all
+
+%.o: %.cpp Phonebook.hpp
+		$(CXX) $(CFLAGS) $(DFLAGS) -c -o $@ -c $<
+
+$(NAME): $(OBJ) Phonebook.hpp
+		$(CXX) $(CFLAGS) $(DFLAGS) $(OBJ) -o $@ 
+
+clean:
+	rm -rf $(OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re:     fclean all

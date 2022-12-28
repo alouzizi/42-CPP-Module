@@ -2,7 +2,8 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
-#include <string.h>
+#include <string>
+#include <iomanip>
 
 class Contact{
 	std::string	firstname;
@@ -28,7 +29,9 @@ class PhoneBook{
     Contact contact[8];
     public :
     void set(std::string list[5], int i);
-    std::string get(int i);
+    std::string get(int i, int j);
 };
 
+std::string get_lien(std::string s);
+void	ft_print(std::string value);
 #endif
