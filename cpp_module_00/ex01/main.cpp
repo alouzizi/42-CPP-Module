@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 17:15:26 by alouzizi          #+#    #+#             */
-/*   Updated: 2022/12/28 17:24:36 by alouzizi         ###   ########.fr       */
+/*   Updated: 2022/12/28 18:12:39 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	main()
 				else
 				{
 					j = std::stoi(name);
-					if (!ok.get(j - 1 ,1).empty() && j < 8)
+					if (!ok.get(j - 1 ,1).empty() && j < 9)
 					{
 						std::cout << "Firstname: " << ok.get(j - 1,1) << "\n";
 						std::cout << "Lastname: " << ok.get(j - 1,2) << "\n";

@@ -3,19 +3,18 @@ NAME = Phonebook
 SRC     =  main.cpp\
         Phonebook.cpp\
 
-CXX = c++
+CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
-DFLAGS = -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 %.o: %.cpp Phonebook.hpp
-		$(CXX) $(CFLAGS) $(DFLAGS) -c -o $@ -c $<
+		@$(CC) $(FLAGS) -c -o $@ -c $<
 
 $(NAME): $(OBJ) Phonebook.hpp
-		$(CXX) $(CFLAGS) $(DFLAGS) $(OBJ) -o $@ 
+		@$(CC) $(FLAGS) $(OBJ) -o $@ 
 
 clean:
 	rm -rf $(OBJ)
