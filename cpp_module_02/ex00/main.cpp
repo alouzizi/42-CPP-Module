@@ -6,16 +6,16 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:32:39 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/01/30 17:05:47 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/01/31 05:35:40 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void )
+int main(void)
 {
 	Fixed a;
-	Fixed b( a );
+	Fixed b(a);
 	Fixed c;
 	c = b;
 	std::cout << a.getRawBits() << std::endl;
