@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:44:05 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/01/31 05:39:20 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/01 06:07:09 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Fixed::Fixed(const Fixed &other)
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-	value = other.value;
+	if (this != &other)
+		value = other.value;
 	std::cout << "Copy assignment operator called\n";
 	return (*this);
 }
@@ -53,6 +54,7 @@ Fixed::Fixed(const int i)
 	value = roundf(i * 256);
 	std::cout << "int constructor called\n";
 }
+
 Fixed::Fixed(const float i)
 {
 	value = roundf(i * 256);
@@ -68,6 +70,7 @@ int Fixed::toInt(void) const
 {
 	return (value / 256);
 }
+
 std::ostream &operator<<(std::ostream &out, const Fixed &in)
 {
 	out << in.toFloat();
