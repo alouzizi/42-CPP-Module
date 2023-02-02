@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 06:27:55 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/01 05:52:47 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/02 03:39:17 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,21 @@ void Fixed::setRawBits(int const raw)
 
 Fixed::Fixed(const int i)
 {
-	value = roundf(i * 256);
+	value = roundf(i * (1 << f));
 }
 Fixed::Fixed(const float i)
 {
-	value = roundf(i * 256);
+	value = roundf(i * (1 << f));
 }
 
 float Fixed::toFloat(void) const
 {
-	return ((float)value / 256);
+	return ((float)value / (1 << f));
 }
 
 int Fixed::toInt(void) const
 {
-	return (value / 256);
+	return (value / (1 << f));
 }
 std::ostream &operator<<(std::ostream &out, const Fixed &in)
 {
