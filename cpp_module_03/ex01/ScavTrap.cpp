@@ -6,11 +6,11 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 14:10:37 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/08 03:21:09 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/08 03:27:31 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap()
 {
