@@ -2,7 +2,7 @@ NAME = scavptrap
 
 SRC	 =	main.cpp \
 		ClapTrap.cpp \
-		ScavTrap.cpp \
+		ScavTrap.cpp 
 
 INC = ClapTrap.hpp \
 		ScavTrap.hpp
