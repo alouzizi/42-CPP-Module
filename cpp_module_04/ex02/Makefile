@@ -8,7 +8,7 @@ SRC	 =	main.cpp \
 
 INC = Animal.hpp \
 		Dog.hpp \
-		Cat.hpp \
+		Cat.hpp
 		
 
 CC = c++

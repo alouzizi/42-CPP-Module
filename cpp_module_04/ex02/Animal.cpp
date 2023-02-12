@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 05:12:28 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/09 05:12:34 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/13 00:40:23 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ Animal &Animal::operator=(const Animal &other)
 		_type = other._type;
 	std::cout << "Animal Copy assignment operator called\n";
 	return (*this);
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "Animal make sound\n";
 }
 
 std::string Animal::getType() const
