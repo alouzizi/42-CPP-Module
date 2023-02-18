@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 05:13:09 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/09 05:13:37 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:29:37 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Brain
 {
-	std::string *_brain;
+	std::string _ideas[100];
 public:
 	Brain();
 	Brain(const Brain &other);
@@ -25,5 +25,4 @@ public:
 	Brain &operator=(const Brain &other);
 	
 };
-
 #endif

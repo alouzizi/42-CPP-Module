@@ -6,15 +6,17 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 05:13:22 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/09 05:14:32 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/15 21:59:29 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 
+
 int	main()
 {
+
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	delete j;//should not create a leak
@@ -24,7 +26,7 @@ int	main()
 	{
 		Dog tmp = copy;
 	}
-	std::cout << copy.getType() << "\n";
+ 	std::cout << copy.getType() << "\n";
 	const Animal* test[2] = {new Dog(),new Cat()};
 	for (int i = 0; i < 2; i++)
 	{

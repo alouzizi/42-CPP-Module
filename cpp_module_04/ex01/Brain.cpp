@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 03:39:01 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/09 04:38:58 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/15 20:24:47 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Brain &Brain::operator=(const Brain &other)
 	if (this != &other)
 	{
 		for (int i = 0; i < 100; i++)
-			_brain[i] = other._brain[i];
+			_ideas[i] = other._ideas[i];
 	}
 	std::cout << "Brain Copy assignment operator called\n";
 	return (*this);

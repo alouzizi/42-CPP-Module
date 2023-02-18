@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 05:13:16 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/09 05:14:23 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/15 21:44:52 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Dog::Dog()
 {
 	_type = "Dog";
-	_brain = new Brain();
-	std::cout << _type << "Default constructor called\n";
+	this->_brain = new Brain();
+	std::cout << _type << " Default constructor called\n";
 }
 
 Dog::~Dog()
@@ -33,6 +33,7 @@ void Dog::makeSound() const
 Dog::Dog(const Dog &other)
 {
 	*this = other;
+	
 	std::cout << "Dog Copy constructor called\n";
 } 
 

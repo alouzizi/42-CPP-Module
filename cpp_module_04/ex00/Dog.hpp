@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 02:28:55 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/14 06:16:05 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/14 04:43:23 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ public:
 	Dog &operator=(const Dog &other);
 	void makeSound() const;
 };
-
 
 #endif
