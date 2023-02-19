@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 06:27:08 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/19 17:58:39 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/19 19:27:12 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ public:
 		const char *what() const throw();
 	};
 };
+std::ostream &operator<<(std::ostream &out, Bureaucrat const &in);
 #endif

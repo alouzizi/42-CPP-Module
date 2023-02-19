@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 06:27:05 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/19 18:03:44 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/19 19:31:58 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 	}
 	std::cout << "Bureaucrat Copy assignment operator called\n";
 	return (*this);
+}
+
+std::ostream& operator<<(std::ostream& out, Bureaucrat const &in)
+{
+	out << in.getName() << ", bureaucrat grade  "<< in.getGrade() << "\n";
+	return (out);
 }
 
 const std::string Bureaucrat::getName() const

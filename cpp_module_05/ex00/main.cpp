@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 06:27:01 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/19 18:07:15 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/19 19:27:41 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
 	{
 		/* do some stuff with bureaucrats */
 		Bureaucrat bureaucrat1("bureaucrat1", 1);
+		std::cout << bureaucrat1;
 		bureaucrat1.increment();
 	}
 	catch (std::exception & e)
