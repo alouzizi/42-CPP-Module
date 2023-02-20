@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:02:41 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/19 19:13:30 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:39:52 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,12 @@ int main()
 	try
 	{
 		/* do some stuff with bureaucrats */
-		Bureaucrat bureaucrat2("bureaucrat1", 150);
+		Bureaucrat bureaucrat2("bureaucrat1", 90);
 		bureaucrat2.decrement();
+		From from1("from1",100,100);
+		from1.beSigned(bureaucrat2);
+		std::cout << from1 << "\n";
+		bureaucrat2.signForm(from1);
 	}
 	catch (std::exception & e)
 	{
@@ -45,7 +49,11 @@ int main()
 		/* do some stuff with bureaucrats */
 		Bureaucrat bureaucrat3("bureaucrat3", 149);
 		bureaucrat3.decrement();
-		std::cout << bureaucrat3.getGrade() << "\n"; 
+		std::cout << bureaucrat3.getGrade() << "\n";
+		From from2("from1",100,100);
+		from2.beSigned(bureaucrat3);
+		std::cout << from2 << "\n";
+		bureaucrat3.signForm(from2);
 	}
 	catch (std::exception & e)
 	{

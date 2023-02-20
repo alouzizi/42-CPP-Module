@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:36:17 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/19 22:14:13 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:34:28 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 std::ostream& operator<<(std::ostream& out, Bureaucrat const &in)
 {
-	out << in.getName() << ", bureaucrat grade  "<< in.getGrade() << "\n";
+	out << in.getName() << ", bureaucrat grade "<< in.getGrade();
 	return (out);
 }
 
@@ -87,7 +87,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 void  Bureaucrat::signForm(From &other) const
 {
 	if (other.isSigned())
-		std::cout << *this << " signed " << other;
+		std::cout << *this << " signed " << other << "\n";
 	else
 		std::cout << *this << " couldn’t sign " << other << " because GradeTooLow \n";
 }
