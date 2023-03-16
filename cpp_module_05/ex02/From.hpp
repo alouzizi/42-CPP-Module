@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:48:14 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/20 15:48:16 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/22 00:34:30 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ public:
 	{
 		const char *what() const throw();
 	};
+	class FromNotSignedException : public std::exception
+	{
+		const char *what() const throw();
+	};
 	void beSigned(Bureaucrat &other);
+	virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, From const &in);

@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:48:12 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/20 15:48:03 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/02/22 00:36:03 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ const char *From::GradeTooHighException::what() const throw()
 const char *From::GradeTooLowException::what() const throw()
 {
 	return ("Error: GradeTooLowException");
+}
+
+const char *From::FromNotSignedException::what() const throw()
+{
+	return ("Error: FromNotSignedException");
 }
 
 void From::beSigned(Bureaucrat &other)
