@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:47:37 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/20 15:47:41 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:03:05 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
-	{
-		// *this = other;
 		_grade = other._grade;	
-	}
 	std::cout << "Bureaucrat Copy assignment operator called\n";
 	return (*this);
 }
@@ -84,10 +81,22 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Error: GradeTooLowException");
 }
 
-void  Bureaucrat::signForm(From &other) const
+void  Bureaucrat::signForm(Form &other) const
 {
 	if (other.isSigned())
 		std::cout << *this << " signed " << other << "\n";
 	else
 		std::cout << *this << " couldn’t sign " << other << " because GradeTooLow \n";
+}
+void Bureaucrat::excuteForm(Form &other) const
+{
+	try
+	{
+		other.execute(*this);
+		std::cout << *this << " executes " << other << "\n";
+	}
+	catch (std::exception &e)
+	{
+		std::cout << *this << " couldn’t execute " << other << " because " << e.what() << "\n";
+	}
 }

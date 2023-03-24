@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:47:52 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/20 15:47:54 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:16:40 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <string>
-#include "From.hpp"
+#include "Form.hpp"
 
-class From;
+class Form;
 class Bureaucrat
 {
 	const std::string _name;
@@ -40,7 +40,8 @@ public:
 	{
 		const char *what() const throw();
 	};
-	void signForm(From &other) const;
+	void signForm(Form &other) const;
+	void excuteForm(Form &other) const;
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &in);

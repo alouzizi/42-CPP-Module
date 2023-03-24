@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:50:49 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/22 00:25:01 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:17:20 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 #include "Form.hpp"
 
+class Form;
 class RobotomyRequestForm : public Form
 {
 	std::string _target;

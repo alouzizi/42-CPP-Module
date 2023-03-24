@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   From.hpp                                           :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:03:28 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/19 22:36:38 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:23:10 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FROM_HPP
-#define FROM_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class From
+class Form
 {
 	const std::string _name;
 	bool _signed;
@@ -25,11 +25,11 @@ class From
 	const int _exec_grade;
 
 public:
-	From();
-	From(std::string name, int sign_grade, int exec_grade);
-	From(const From &other);
-	~From();
-	From &operator=(const From &other);
+	Form();
+	Form(std::string name, int sign_grade, int exec_grade);
+	Form(const Form &other);
+	~Form();
+	Form &operator=(const Form &other);
 	const std::string& getName() const;
 	bool isSigned() const;
 	int getSignGrade() const;
@@ -45,5 +45,5 @@ public:
 	void beSigned(Bureaucrat &other);
 };
 
-std::ostream &operator<<(std::ostream &out, From const &in);
+std::ostream &operator<<(std::ostream &out, Form const &in);
 #endif

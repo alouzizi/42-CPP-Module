@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 15:50:54 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/22 00:29:50 by alouzizi         ###   ########.fr       */
+/*   Created: 2023/03/23 18:09:04 by alouzizi          #+#    #+#             */
+/*   Updated: 2023/03/23 18:29:03 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 #include "Form.hpp"
+#include <fstream>
 
+class Form;
 class ShrubberyCreationForm : public Form
 {
 	std::string _target;

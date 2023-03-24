@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   From.cpp                                           :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 22:48:12 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/22 00:36:03 by alouzizi         ###   ########.fr       */
+/*   Created: 2023/02/19 19:03:23 by alouzizi          #+#    #+#             */
+/*   Updated: 2023/03/23 17:58:11 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "From.hpp"
+#include "Form.hpp"
 
-From::From() : _sign_grade(0), _exec_grade(0)
+Form::Form() : _sign_grade(0), _exec_grade(0)
 {
 	_signed = false;
-	std::cout << "From Default constructor called\n";
+	std::cout << "Form Default constructor called\n";
 }
 
-From::From(std::string name, int sign_grade, int exec_grade):_name(name),_sign_grade(sign_grade), _exec_grade(exec_grade)
+Form::Form(std::string name, int sign_grade, int exec_grade):_name(name),_sign_grade(sign_grade), _exec_grade(exec_grade)
 {
 	if (_exec_grade < 1 || _sign_grade < 1)
 		throw(GradeTooHighException());
@@ -27,25 +27,25 @@ From::From(std::string name, int sign_grade, int exec_grade):_name(name),_sign_g
 				
 }
 
-From::From(const From &other) : _sign_grade(0), _exec_grade(0)
+Form::Form(const Form &other) : _sign_grade(0), _exec_grade(0)
 {
 	*this = other;
-	std::cout << "From Copy constructor called\n";
+	std::cout << "Form Copy constructor called\n";
 }
 
-From::~From()
+Form::~Form()
 {
-	std::cout << "From Destructor called\n";
+	std::cout << "Form Destructor called\n";
 }
 
-From &From::operator=(const From &other)
+Form &Form::operator=(const Form &other)
 {
 	if (this != &other)
 		_signed = other._signed;
 	return (*this);
 }
 
-std::ostream &operator<<(std::ostream &out, From const &in)
+std::ostream &operator<<(std::ostream &out, Form const &in)
 {
 	out << "Form: " << in.getName() << ", Signed: " << in.isSigned()
 		<< ", Grade sing: " << in.getSignGrade()
@@ -53,42 +53,37 @@ std::ostream &operator<<(std::ostream &out, From const &in)
 	return (out);
 }
 
-const std::string &From::getName() const
+const std::string &Form::getName() const
 {
 	return (_name);
 }
 
-bool From::isSigned() const
+bool Form::isSigned() const
 {
 	return (_signed);
 }
 
-int From::getSignGrade() const
+int Form::getSignGrade() const
 {
 	return (_sign_grade);
 }
 
-int From::getExecGrade() const
+int Form::getExecGrade() const
 {
 	return (_exec_grade);
 }
 
-const char *From::GradeTooHighException::what() const throw()
+const char *Form::GradeTooHighException::what() const throw()
 {
 	return ("Error: GradeTooHighException");
 }
 
-const char *From::GradeTooLowException::what() const throw()
+const char *Form::GradeTooLowException::what() const throw()
 {
 	return ("Error: GradeTooLowException");
 }
 
-const char *From::FromNotSignedException::what() const throw()
-{
-	return ("Error: FromNotSignedException");
-}
-
-void From::beSigned(Bureaucrat &other)
+void Form::beSigned(Bureaucrat &other)
 {
 	if (other.getGrade() <= _sign_grade)
 		_signed = true;

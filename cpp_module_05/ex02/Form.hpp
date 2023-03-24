@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   From.hpp                                           :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:48:14 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/22 00:34:30 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:15:50 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FROM_HPP
-#define FROM_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class From
+class Form
 {
 	const std::string _name;
 	bool _signed;
@@ -25,11 +25,11 @@ class From
 	const int _exec_grade;
 
 public:
-	From();
-	From(std::string name, int sign_grade, int exec_grade);
-	From(const From &other);
-	~From();
-	From &operator=(const From &other);
+	Form();
+	Form(std::string name, int sign_grade, int exec_grade);
+	Form(const Form &other);
+	~Form();
+	Form &operator=(const Form &other);
 	const std::string& getName() const;
 	bool isSigned() const;
 	int getSignGrade() const;
@@ -42,7 +42,7 @@ public:
 	{
 		const char *what() const throw();
 	};
-	class FromNotSignedException : public std::exception
+	class FormNotSignedException : public std::exception
 	{
 		const char *what() const throw();
 	};
@@ -50,5 +50,5 @@ public:
 	virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
-std::ostream &operator<<(std::ostream &out, From const &in);
+std::ostream &operator<<(std::ostream &out, Form const &in);
 #endif

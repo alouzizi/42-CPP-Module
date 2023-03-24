@@ -6,15 +6,14 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:50:46 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/03/12 17:47:15 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:26:22 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm():Form("RobotomyRequestForm", 72, 45)
 {
-	From::From("RobotomyRequestForm", 72, 45);
 	std::cout << "RobotomyRequestForm Default constructor called\n";
 }
 
@@ -34,7 +33,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << "RobotomyRequestForm Destructor called\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm &operator=(RobotomyRequestForm const &other)
+RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &other)
 {
 	if (this != &other)
 		_target = other._target;
@@ -43,6 +42,15 @@ RobotomyRequestForm::RobotomyRequestForm &operator=(RobotomyRequestForm const &o
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	if (executor.getGrade() > _gradeToExecute)
+	if (executor.getGrade() > getExecGrade())
 		throw(Form::GradeTooLowException());
+	else 
+	{
+		static int i = 0;
+		if (i % 2 == 0)
+			std::cout << _target << " has been robotomized successfully\n";
+		else
+			std::cout << _target << " has been robotomized unsuccessfully\n";
+		i++;
+	}
 }

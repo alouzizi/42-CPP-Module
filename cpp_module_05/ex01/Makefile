@@ -2,10 +2,10 @@ NAME = bureaucrat
 
 SRC	 =	main.cpp \
 		Bureaucrat.cpp \
-		From.cpp
+		Form.cpp
 
 INC = 	Bureaucrat.hpp \
-		From.hpp
+		Form.hpp
 
 CC = c++
 

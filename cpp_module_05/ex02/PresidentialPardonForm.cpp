@@ -6,15 +6,15 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:50:40 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/22 00:37:06 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:25:40 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
+
+PresidentialPardonForm::PresidentialPardonForm():Form("PresidentialPardonForm", 25, 5)
 {
-	From::From("PresidentialPardonForm", 25, 5);
 	std::cout << "PresidentialPardonForm Default constructor called\n";
 }
 
@@ -34,7 +34,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "PresidentialPardonForm Destructor called\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm &operator=(PresidentialPardonForm const &other)
+PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &other)
 {
 	if (this != &other)
 		_target = other._target;
@@ -43,7 +43,7 @@ PresidentialPardonForm::PresidentialPardonForm &operator=(PresidentialPardonForm
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if (executor.getGrade() > _gradeToExecute)
+	if (executor.getGrade() > getExecGrade())
 		throw(Form::GradeTooLowException());
 	else
 		std::cout << _target << " has been pardoned by Zafod Beeblebrox\n";

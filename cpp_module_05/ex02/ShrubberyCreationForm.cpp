@@ -6,21 +6,20 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:58:54 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/02/22 00:59:29 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:28:40 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm():Form("ShrubberyCreationForm", 145, 137)
 {
-	From::From("ShrubberyCreationForm", 145, 137);
 	std::cout << "ShrubberyCreationForm Default constructor called\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 {
-	_traget = target;
+	_target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other)
@@ -34,7 +33,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm Destructor called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm &operator=(ShrubberyCreationForm const &other)
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &other)
 {
 	if (this != &other)
 		_target = other._target;
@@ -43,10 +42,12 @@ ShrubberyCreationForm::ShrubberyCreationForm &operator=(ShrubberyCreationForm co
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (isSigned() == false)
-		throw(Form::FormNotSignedException());
-	else if (executor.getGrade() > _gradeToExecute)
+	// if (isSigned() == false)
+	// 	throw(Form::FormNotSignedException());
+	std::cout << executor.getGrade() << "]"<< getExecGrade() << "\n";
+	 if (executor.getGrade() > getExecGrade())
 		throw(Form::GradeTooLowException());
+	std::cout<<"oooooo\n";
 	std::ofstream file(_target + "_shrubbery");
 	file << "\033[31"<< std::endl;
 	file << "     	        ||" << std::endl;
@@ -74,4 +75,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	file << "     	       $$$" << std::endl;
 	file << "              $$$" << std::endl;
 	file << "     	       $$$\033[0m" << std::endl;
+	file.close();
 }
