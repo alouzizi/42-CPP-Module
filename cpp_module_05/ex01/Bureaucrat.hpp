@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:36:53 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/03/23 18:14:41 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:52:20 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include "Form.hpp"
 
-// class Form;
+class Form;
 class Bureaucrat
 {
 	const std::string _name;

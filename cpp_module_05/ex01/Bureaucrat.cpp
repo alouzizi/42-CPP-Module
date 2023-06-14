@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:36:17 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/03/23 17:58:30 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:57:11 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name)
 {
 	_grade = grade;
+	if (_grade < 1)
+		throw(GradeTooHighException());
+	if (_grade > 150)
+		throw(GradeTooLowException());
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other):_name(other._name)
