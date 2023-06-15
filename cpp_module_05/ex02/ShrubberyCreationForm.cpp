@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:58:54 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 20:30:35 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/15 23:01:35 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,33 +47,18 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	std::cout << executor.getGrade() << "]"<< getExecGrade() << "\n";
 	 if (executor.getGrade() > getExecGrade())
 		throw(Form::GradeTooLowException());
-	std::cout<<"ooooo--------------------------------o\n";
 	std::ofstream file(_target + "_shrubbery");
-	file << "\033[31"<< std::endl;
-	file << "     	        ||" << std::endl;
-	file << "              /**\\" << std::endl;
-	file << "             /A$$A\\" << std::endl;
-	file << "            /A$$$$A\\" << std::endl;
-	file << "           /A$$$$$$A\\" << std::endl;
-	file << "          /A$$$$$$$$A\\" << std::endl;
-	file << "         /A$$$$$$$$$$A\\" << std::endl;
-	file << "        /A$$$$Ali$$$$$A\\" << std::endl;
-	file << "       /A$$$LOUZIZI$$$$A\\"<< std::endl;
-	file << "      /A$$$$alouzizi$$$$A\\" << std::endl;
-	file << "     /A$$$$$$$$$$$$$$$$$$A\\" << std::endl;
-	file << "    /A$$$$$$$$$$$$$$$$$$$$A\\" << std::endl;
-	file << "   /A$$$$$$$$$$$$$$$$$$$$$$A\\" << std::endl;
-	file << "  /A$$$$$$&&$$$$$$$$$&&$$$$$A\\" << std::endl;
-	file << " /A$$$$$$$$$$$$$$$$$$$$$$$$$$A\\" << std::endl;
-	file << "              $$$" << std::endl;
-	file << "     	       $$$" << std::endl;
-	file << "              $$$" << std::endl;
-	file << "     	       $$$" << std::endl;
-	file << "              $$$" << std::endl;
-	file << "     	       $$$" << std::endl;
-	file << "              $$$" << std::endl;
-	file << "     	       $$$" << std::endl;
-	file << "              $$$" << std::endl;
-	file << "     	       $$$\033[0m" << std::endl;
+
+    file << "        *" << std::endl;
+    file << "       ***" << std::endl;
+    file << "      *****" << std::endl;
+    file << "     *******" << std::endl;
+    file << "    *********" << std::endl;
+    file << "   ***********" << std::endl;
+    file << "  *************" << std::endl;
+    file << " ***************" << std::endl;
+    file << "*****************" << std::endl;
+    file << "       ***" << std::endl;
+    file << "       ***" << std::endl;
 	file.close();
 }
