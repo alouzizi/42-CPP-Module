@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:58:54 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/03/23 20:28:40 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:30:35 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm():Form("ShrubberyCreationForm", 145
 	std::cout << "ShrubberyCreationForm Default constructor called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Form("ShrubberyCreationForm", 145, 137)
 {
 	_target = target;
 }
@@ -47,7 +47,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	std::cout << executor.getGrade() << "]"<< getExecGrade() << "\n";
 	 if (executor.getGrade() > getExecGrade())
 		throw(Form::GradeTooLowException());
-	std::cout<<"oooooo\n";
+	std::cout<<"ooooo--------------------------------o\n";
 	std::ofstream file(_target + "_shrubbery");
 	file << "\033[31"<< std::endl;
 	file << "     	        ||" << std::endl;

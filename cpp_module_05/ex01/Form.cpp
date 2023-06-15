@@ -6,28 +6,30 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:03:23 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/13 21:04:20 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:23:20 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _sign_grade(0), _exec_grade(0)
+Form::Form() : _sign_grade(150), _exec_grade(150)
 {
 	_signed = false;
+	_name = "Default";
 	std::cout << "Form Default constructor called\n";
 }
 
 Form::Form(std::string name, int sign_grade, int exec_grade):_name(name),_sign_grade(sign_grade), _exec_grade(exec_grade)
 {
+	
 	if (_exec_grade < 1 || _sign_grade < 1)
 		throw(GradeTooHighException());
 	if (_exec_grade > 150 || _sign_grade > 150)
 		throw(GradeTooLowException());
-				
+	_signed = false;
 }
 
-Form::Form(const Form &other) : _sign_grade(0), _exec_grade(0)
+Form::Form(const Form &other) : _sign_grade(other._sign_grade), _exec_grade(other._exec_grade)
 {
 	*this = other;
 	std::cout << "Form Copy constructor called\n";

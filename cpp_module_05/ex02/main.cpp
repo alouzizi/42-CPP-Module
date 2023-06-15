@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 14:23:43 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/03/23 20:25:13 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:34:34 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Form.hpp"
 
 int main()
 {
 	try
 	{
-		Bureaucrat bureaucrat("ali", 140);
+		Bureaucrat bureaucrat("ali", 10);
 		PresidentialPardonForm presidentform("President");
 		RobotomyRequestForm robotomyform("Robotomy");
 		ShrubberyCreationForm shrubberyform("Shrubbery");
@@ -27,15 +28,15 @@ int main()
 		std::cout << "<--------- Test 1 --------->\n";
 		bureaucrat.signForm(presidentform);
 		bureaucrat.excuteForm(presidentform);
-		//shrubberyform.execute(bureaucrat);
+		shrubberyform.execute(bureaucrat);
 		std::cout << "<--------- Test 2 --------->\n";
 		bureaucrat.signForm(robotomyform);
 		bureaucrat.excuteForm(robotomyform);
-		//shrubberyform.execute(bureaucrat);
-		std::cout << "<--------- Test 3 --------->\n";
+		shrubberyform.execute(bureaucrat);
+		std::cout << "<--------- Test 3 --------->\n";;
 		bureaucrat.signForm(shrubberyform);
 		bureaucrat.excuteForm(shrubberyform);
-		//shrubberyform.execute(bureaucrat);
+		shrubberyform.execute(bureaucrat);
 		std::cout << "<--------- ------ --------->\n";
 	}
 	catch (std::exception & e)

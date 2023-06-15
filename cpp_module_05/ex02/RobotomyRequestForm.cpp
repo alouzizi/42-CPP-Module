@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:50:46 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/03/23 18:26:22 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:30:23 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm():Form("RobotomyRequestForm", 72, 45)
 	std::cout << "RobotomyRequestForm Default constructor called\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target):Form("RobotomyRequestForm", 72, 45)
 {
 	_target = target;
 }

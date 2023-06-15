@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:02:41 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/14 13:02:25 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/15 17:46:53 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,6 @@ int main()
 		/* handle exception */
 		std::cout<<e.what()<< std::endl;
 	}
+
+	
 }
