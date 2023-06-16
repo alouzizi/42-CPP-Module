@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:55:45 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 23:56:04 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:00:52 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <string>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Form;
 class Bureaucrat

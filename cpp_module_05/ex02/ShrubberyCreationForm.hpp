@@ -6,13 +6,13 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 18:09:04 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/03/23 18:29:03 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:00:22 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <fstream>
 
 class Form;

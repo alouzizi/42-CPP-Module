@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:54:17 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/16 02:54:05 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:02:49 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Intern.hpp"
 
 int main()
@@ -52,5 +52,6 @@ int main()
 		/* handle exception */
 		std::cout<<e.what()<< std::endl;
 	}
+	while(1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:03:28 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 17:45:22 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:52:56 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Form
 	const int _exec_grade;
 
 public:
-	// Form();
-	 Form(std::string name, int sign_grade, int exec_grade);
+	Form();
+	Form(std::string name, int sign_grade, int exec_grade);
 	Form(const Form &other);
 	~Form();
 	Form &operator=(const Form &other);

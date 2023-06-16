@@ -2,13 +2,13 @@ NAME = bureaucrat
 
 SRC	 =	main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp \
+		AForm.cpp \
 		PresidentialPardonForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp
 
 INC = 	Bureaucrat.hpp \
-		Form.hpp \
+		AForm.hpp \
 		PresidentialPardonForm.hpp \
 		RobotomyRequestForm.hpp \
 		ShrubberyCreationForm.hpp

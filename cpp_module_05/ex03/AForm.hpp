@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 15:48:14 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 20:32:54 by alouzizi         ###   ########.fr       */
+/*   Created: 2023/06/15 23:54:40 by alouzizi          #+#    #+#             */
+/*   Updated: 2023/06/16 20:00:44 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
@@ -28,7 +28,7 @@ public:
 	Form();
 	Form(std::string name, int sign_grade, int exec_grade);
 	Form(const Form &other);
-	~Form();
+	virtual ~Form();
 	Form &operator=(const Form &other);
 	const std::string& getName() const;
 	bool isSigned() const;

@@ -6,13 +6,13 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:53:06 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 23:53:12 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:01:18 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Form;
 class PresidentialPardonForm : public Form

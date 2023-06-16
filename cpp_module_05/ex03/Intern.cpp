@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:57:24 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/16 02:41:47 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:10:07 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Intern::Intern()
 {
@@ -54,6 +54,7 @@ Form *Intern::makeForm(std::string name, std::string target)
             std::cout << "Intern creates " << name << std::endl;
             return (forms[i]);
         }
+        delete forms[i];
         i++;
     }
     std::cout << "Intern can't create " << name <<  '\n';
