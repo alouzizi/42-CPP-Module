@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 14:23:43 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 23:05:18 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/15 23:47:33 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 		Bureaucrat bureaucrat("ali", 10);
 		PresidentialPardonForm presidentform("President");
 		RobotomyRequestForm robotomyform("Robotomy");
-		ShrubberyCreationForm shrubberyform("HOME");
+		ShrubberyCreationForm shrubberyform("Home");
 
 		std::cout << "<--------- Test 1 --------->\n";
 		bureaucrat.signForm(presidentform);
