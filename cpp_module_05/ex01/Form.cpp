@@ -6,16 +6,15 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:03:23 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 20:23:20 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:13:24 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _sign_grade(150), _exec_grade(150)
+Form::Form() : _name("Default"), _sign_grade(150), _exec_grade(150)
 {
 	_signed = false;
-	_name = "Default";
 	std::cout << "Form Default constructor called\n";
 }
 
