@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   From.hpp                                           :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:54:40 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 23:54:57 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 02:35:32 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Form();
 	Form(std::string name, int sign_grade, int exec_grade);
 	Form(const Form &other);
-	~Form();
+	virtual ~Form();
 	Form &operator=(const Form &other);
 	const std::string& getName() const;
 	bool isSigned() const;

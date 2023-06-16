@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:54:17 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 23:54:19 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 02:54:05 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,17 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 
 int main()
 {
+
+	{
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("shrubbery creation", "TEST");
+		delete rrf;
+	}
 	try
 	{
 		Bureaucrat bureaucrat("ali", 10);

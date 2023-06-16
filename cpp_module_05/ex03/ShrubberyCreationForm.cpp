@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:50:58 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 23:51:08 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 02:47:43 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     file << "       ***" << std::endl;
     file << "       ***" << std::endl;
 	file.close();
+}
+
+std::string ShrubberyCreationForm::getTarget() const
+{
+	return (_target);
 }

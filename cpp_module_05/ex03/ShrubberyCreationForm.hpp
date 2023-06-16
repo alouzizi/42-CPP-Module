@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 23:50:55 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/15 23:51:17 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/16 02:47:25 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(ShrubberyCreationForm const &other);
 	~ShrubberyCreationForm();
+	std::string getTarget() const;
 	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &other);
 	void execute(Bureaucrat const &executor) const;
 };

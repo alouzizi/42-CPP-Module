@@ -5,13 +5,15 @@ SRC	 =	main.cpp \
 		Form.cpp \
 		PresidentialPardonForm.cpp \
 		ShrubberyCreationForm.cpp \
-		RobotomyRequestForm.cpp
+		RobotomyRequestForm.cpp \
+		Intern.cpp
 
 INC = 	Bureaucrat.hpp \
 		Form.hpp \
 		PresidentialPardonForm.hpp \
 		RobotomyRequestForm.hpp \
-		ShrubberyCreationForm.hpp
+		ShrubberyCreationForm.hpp \
+		Intern.hpp
 
 
 
