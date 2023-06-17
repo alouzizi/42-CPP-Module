@@ -6,13 +6,13 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:36:17 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/14 12:57:11 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/17 15:15:44 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():_name("Default")
 {
 	std::cout << "Bureaucrat Default constructor called\n";
 }
