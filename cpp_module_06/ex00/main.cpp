@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 20:52:30 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/23 01:28:59 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/06/25 07:24:43 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@ int main(int ac, char **av)
         std::cout << "Wrong number of arguments\n";
         return (1);
     }
-    
-    ScalarConverter s;
-    s.convert(av[1]);
+    ScalarConverter::convert(av[1]);
 }

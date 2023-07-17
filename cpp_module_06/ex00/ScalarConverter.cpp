@@ -6,136 +6,125 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:39:40 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/06/23 02:30:46 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:52:08 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <sstream>
 
-ScalarConverter::ScalarConverter(){}
-ScalarConverter::~ScalarConverter(){}
-ScalarConverter::ScalarConverter(const ScalarConverter &other)
-{
-    *this = other;
-    std::cout << "ScalarConverter copy constructor called\n";
-}
-
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
-{
-    (void)other;
-    std::cout << "ScalarConverter copy assignment operator called\n";
-    return (*this);
-}
+ScalarConverter::ScalarConverter() {}
+ScalarConverter::~ScalarConverter() {}
 
 void ScalarConverter::toChar(std::string s)
 {
+    int i;
     char c;
-    
-    if (s[0] == '-')
-        throw(ImpossibleException());
-    c = static_cast<char>(std::stoi(s));
-    if (c < 32 || c > 126)
-        std::cout << "char: Non displayable\n";
+    std::stringstream ss(s);
+
+    if (ss >> i)
+    {
+        if (i >= 0 && i <= 127)
+        {
+            c = static_cast<char>(i);
+            if (c < 32 || c > 126)
+                std::cout << "char: Non displayable\n";
+            else
+                std::cout << "char: '" << c << "'" << std::endl;
+        }
+        else
+            std::cout << "char: impossible\n";
+    }
     else
-        std::cout << "char: '" << c << "'" <<std::endl;
+        std::cout << "char: impossible\n";
 }
 
 void ScalarConverter::toInt(std::string s)
 {
     int i;
+    std::stringstream ss(s);
 
-    i = static_cast<int>(std::stoi(s));
-    std::cout << "int: " << i << std::endl;
+    if (ss >> i)
+    {
+        i = static_cast<int>(std::stoi(s));
+        std::cout << "int: " << i << std::endl;
+    }
+    else
+        std::cout << "int: impossible\n";
 }
 
 void ScalarConverter::toFloat(std::string s)
 {
     float f;
-    f = static_cast<float>(std::stof(s));
-    if (f - static_cast<int>(f) == 0)
-        std::cout << "float: " << f << ".0f" << std::endl;
+    std::stringstream ss(s);
+    if (ss >> f)
+    {
+        f = static_cast<float>(std::stof(s));
+        if (f - static_cast<int>(f) == 0)
+            std::cout << "float: " << f << ".0f" << std::endl;
+        else
+            std::cout << "float: " << f << "f" << std::endl;
+    }
     else
-        std::cout << "float: " << f << "f" << std::endl;
+        std::cout << "float:  impossible\n";
 }
 
 void ScalarConverter::toDouble(std::string s)
 {
     double d;
+    std::stringstream ss(s);
 
-    d = static_cast<double>(std::stod(s));
-    if (d - static_cast<int>(d) == 0)
-        std::cout << "double: " << d << ".0" << std::endl;
+    if (ss >> d)
+    {
+        d = static_cast<double>(std::stod(s));
+        if (d - static_cast<int>(d) == 0)
+            std::cout << "double: " << d << ".0" << std::endl;
+        else
+            std::cout << "double: " << d << std::endl;
+    }
     else
-        std::cout << "double: " << d << std::endl;
+        std::cout << "double: impossible\n";
+}
+
+void ScalarConverter::handlePseudoLiterals(std::string s)
+{
+    if (s == "-inff")
+    {
+        std::cout << "float: -inff" << std::endl;
+        std::cout << "double: -inf" << std::endl;
+    }
+    else if (s == "+inff")
+    {
+        std::cout << "float: +inff" << std::endl;
+        std::cout << "double: +inf" << std::endl;
+    }
+    else if (s == "nanf")
+    {
+        std::cout << "float: nanf" << std::endl;
+        std::cout << "double: nan" << std::endl;
+    }
 }
 
 void ScalarConverter::convert(std::string s)
 {
-    if (s.length() == 1 && !isdigit(s[0]))
+    int i = 0;
+    toChar(s);
+    toInt(s);
+    std::string pseudo[3] = {"-inff", "+inff", "nanf"};
+    while (i < 3)
     {
-        std::cout << "char: '" << s[0] << "'" << std::endl;
-        std::cout << "int: " << static_cast<int>(s[0]) << std::endl;
-        std::cout << "float: " << static_cast<float>(s[0]) << ".0f" << std::endl;
-        std::cout << "double: " << static_cast<double>(s[0]) << ".0" << std::endl;
-    }
-    else
-    {
-        try
+        if (s == pseudo[i])
         {
-            if (s.length() > 1)
-            {
-                int i = 0;
-                while(((size_t) i) <  s.length())
-                {
-                    if (!isdigit(s[i]) && s[i] != '.' && s[i] != 'f')
-                        throw(ImpossibleException());
-                    i++;
-                }
-            }
+            handlePseudoLiterals(s);
+            return;
         }
-        catch(const std::exception& e)
+        i++;
+        if (i == 3)
         {
-            std::cerr << e.what() << '\n'; 
-        }
-        try
-        {  
-            toChar(s);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << "char: impossible" << '\n';
-        }
-        try
-        {  
-            toInt(s);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << "int: impossible" << '\n';
-        }
-
-        try
-        {
+            if (s[s.size() - 1] == 'f')
+                s.erase(s.size() - 1);
             toFloat(s);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << "float: impossible" << '\n';
-        }
-        try
-        {
             toDouble(s);
         }
-        catch(const std::exception& e)
-        {
-            std::cerr << "double: impossible" << '\n';
-        }
     }
-}
-
-const char *ScalarConverter::ImpossibleException::what() const throw()
-{
-    // return ("impossible");
-
-    return ("char: impossible\nint: impossible\nfloat: impossible\ndouble: impossible");
 }
