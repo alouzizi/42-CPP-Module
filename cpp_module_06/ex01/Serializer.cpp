@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:57:38 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/19 14:53:21 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/20 14:19:01 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <iostream>
 
 Data::Data(int val) : value(val){}
+
+Serializer::Serializer(){}
+Serializer::~Serializer(){}
 
 uintptr_t Serializer::serialize(Data *ptr)
 {
