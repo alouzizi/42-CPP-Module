@@ -1,10 +1,9 @@
-NAME = serializer
+NAME = identify
 
 SRC	 =	main.cpp \
-		Serializer.cpp
+		Base.cpp
 
-INC =	Serializer.hpp \
-		Data.hpp
+INC =	Base.hpp
 
 
 CC = c++
