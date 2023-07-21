@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:55:46 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/20 15:29:50 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/21 10:32:08 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ Base::~Base() {}
 Base *generate(void)
 {
 	int rand = std::rand() % 3 + 1;
+	std::string  str[3] = {"A", "B", "C"};
+	std::cout << "Generated " << str[rand - 1] << std::endl;
 	if (rand == 1)
 		return new A();
 	else if (rand == 2)

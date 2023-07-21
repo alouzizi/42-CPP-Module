@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:57:43 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/20 14:17:53 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/21 10:29:59 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main()
 		std::cout << "Serialization and deserialization successful!\n";
 		std::cout << "Original Pointer: " << originalPtr << std::endl;
 		std::cout << "Deserialized Pointer: " << deserialPtr << std::endl;
+		std::cout << deserialPtr->value << std::endl;
 	}
 	else
 		std::cout << "Serialization and deserialization failed!\n";
