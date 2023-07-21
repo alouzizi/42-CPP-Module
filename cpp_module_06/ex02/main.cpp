@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:00:55 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/20 14:08:21 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/21 08:24:46 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int main()
 {
-    std::srand(std::time(0));
+	std::srand(std::time(0));
 
-    Base *randPtr = generate();
-    identify(randPtr);
-    delete randPtr;
+	Base *randPtr = generate();
+	identify(randPtr);
+	delete randPtr;
 
-    Base &randRef = *generate();
-    identify(randRef);
+	Base &randRef = *generate();
+	identify(randRef);
 }

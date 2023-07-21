@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 10:44:48 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/20 13:49:57 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/21 08:26:43 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 class Base
 {
 public:
-    virtual ~Base();
-}; 
+	virtual ~Base();
+};
+
 class A : public Base
 {
 };
@@ -31,8 +32,8 @@ class C : public Base
 {
 };
 
-Base * generate(void);
-void identify(Base* p);
-void identify(Base& p);
+Base	*generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
 
 #endif
