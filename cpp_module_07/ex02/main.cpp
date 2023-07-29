@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:13:44 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/29 12:06:07 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/29 13:50:51 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int main()
 			b[i] = s[i];
 			std::cout << b[i] << std::endl;
 		}
-		std::
 	}
 	catch (const std::exception &e)
 	{

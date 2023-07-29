@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:12:38 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/26 14:38:43 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/29 13:50:57 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ARRAY_HPP
 #include <iostream>
 
-template <typename T>
+template <class T>
 class Array
 {
 	T *_array;
