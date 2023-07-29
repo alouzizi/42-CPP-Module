@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:13:44 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/26 15:15:18 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/07/29 12:06:07 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main()
 {
 	try
 	{
+		
 		std::string s[] = {"Hello", "World", "!"};
 		Array<int> a(5);
 		Array<std::string> b(3);
@@ -29,6 +30,7 @@ int main()
 			b[i] = s[i];
 			std::cout << b[i] << std::endl;
 		}
+		std::
 	}
 	catch (const std::exception &e)
 	{
