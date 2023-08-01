@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 13:58:02 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/07/30 12:29:42 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/08/01 13:53:02 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ int main()
 
 	try
 	{
-		easyfind(a,-3);
+		int pos = easyfind(a, -3);
+		std::cout << "element found at position " << pos << std::endl;
+		std::cout << a[pos] << std::endl;
 	}
-	catch(const std::exception& e)
+	catch (const std::exception &e)
 	{
 		std::cout << "element not found" << std::endl;
 	}
