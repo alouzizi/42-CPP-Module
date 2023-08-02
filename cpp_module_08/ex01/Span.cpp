@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 12:31:06 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/08/01 16:07:48 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:37:08 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,18 @@ void Span::addNumber(int nb)
 
 int Span::shortestSpan()
 {
-	// implementation of the shortestSpan() method
-	return 0;
+	std::vector<int> tmp;
+	int shortSpan;
+	tmp = _tab;
+	sort(tmp.begin(), tmp.end());
+	shortSpan = tmp[1] - tmp[0];
+	for(unsigned int i = 1; i < tmp.size() - 1; i++)
+	{
+		if (tmp[i + 1] - tmp[i] < shortSpan)
+			shortSpan = tmp[i + 1] - tmp[i];
+	}
+	tmp.clear();
+	return shortSpan;
 }
 
 int Span::longestSpan()
@@ -59,8 +69,8 @@ int Span::longestSpan()
 	std::vector<int> tmp;
 	int longSpan;
 	tmp = _tab;
-	sort(_tab.begin(), _tab.end());
-	longSpan = *(_tab.end() - 1) - *(_tab.begin());
+	sort(tmp.begin(), tmp.end());
+	longSpan = *(tmp.end() - 1) - *(tmp.begin());
 	tmp.clear();
 	return longSpan;
 }
