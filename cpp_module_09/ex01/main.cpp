@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:54:36 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/08/07 15:03:05 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:35:50 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int main(int ac, char **av)
 	{
 		if (isOperator(av[1][i]))
 		{
+			if (rpn.size() < 2)
+			{
+				std::cout << "Error: invalide argument." << std::endl;
+				return (1);
+			}
 			a = rpn.top();
 			rpn.pop();
 			b = rpn.top();

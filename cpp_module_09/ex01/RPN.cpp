@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:54:33 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/08/07 14:58:46 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:32:56 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ int opertion(int a, int b, char op)
 	if (op == '/')
 	{
 		if (a == 0)
-			return 0;
+		{
+			std::cout << "Error: division by zero." << std::endl;
+			exit(1);
+		}
 		return (b / a);
 	}
-	else
-		return INT_MIN;
+	return 0;
 }
 
 bool isValidNumber(char nb)
