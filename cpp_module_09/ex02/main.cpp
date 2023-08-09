@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:05:13 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/08/07 18:24:13 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:38:06 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 int main(int ac, char **av)
 {
-	
+
 	if (ac <= 1)
 	{
 		std::cout << "Error: invalide argument." << std::endl;
 		return (1);
 	}
 	std::vector<int> data;
-	std::list<int> data2;
+	std::deque<int> data2;
 	int nb;
 	for (int i = 1; i < ac; i++)
 	{
+		if (isdigit(av[i][0]) == 0)
+		{
+			std::cout << "Error: invalide argument." << std::endl;
+			return (1);
+		}
 		nb = atoi(av[i]);
 		if (nb < 0)
 		{

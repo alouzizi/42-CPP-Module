@@ -6,7 +6,7 @@
 /*   By: alouzizi <alouzizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:05:57 by alouzizi          #+#    #+#             */
-/*   Updated: 2023/08/08 15:35:42 by alouzizi         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:38:56 by alouzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,67 @@
 #include <vector>
 #include <list>
 #include <ctime>
-
+#include <deque>
 template <typename T>
-void displayNum(T &num)
+void displayNum(T num)
 {
 	for (typename T::iterator it = num.begin(); it != num.end(); it++)
 		std::cout << *it << " ";
 	std::cout << std::endl;
 }
-// template <typename T>
-// void merge(T &data, int left, int mid, int right)
-// {
-// }
+
+template <typename T>
+void merge(T &data, int left, int mid, int right)
+{
+	int i = left;
+	int j = mid + 1;
+	int k = left;
+	T tmp(5);
+	while (i <= mid && j <= right)
+	{
+		if (data[i] <= data[j])
+		{
+			tmp[k] = data[i];
+			k++;
+			i++;
+		}
+		else
+		{
+			tmp[k] = data[j];
+			k++;
+			j++;
+		}
+	}
+	while (i <= mid)
+	{
+		tmp[k] = data[i];
+		i++;
+		k++;
+	}
+	while (j <= right)
+	{
+		tmp[k] = data[j];
+		k++;
+		j++;
+	}
+	for (int p = left; p <= right; p++)
+		data[p] = tmp[p];
+}
+
 template <typename T>
 void mergeInsertSort(T &data, int left, int right)
 {
 	if (left < right)
 	{
 		int mid = (left + right) / 2;
-		mergeInsertSort(data, left , mid);
+		mergeInsertSort(data, left, mid);
 		mergeInsertSort(data, mid + 1, right);
-		//merge(data, left, mid, right);
+		merge(data, left, mid, right);
 	}
 }
 
 template <typename T, typename T2>
-void sortNum(T &num, T2 &num2)
+void sortNum(T num, T2 num2)
 {
 	std::cout << "Before: ";
 	displayNum(num);
@@ -62,5 +97,4 @@ void sortNum(T &num, T2 &num2)
 	std::cout << "Time to process a range of " << num2.size()
 			  << " elements with std::list: " << time << " us" << std::endl;
 }
-
 #endif
