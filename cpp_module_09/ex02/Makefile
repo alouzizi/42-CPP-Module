@@ -1,7 +1,6 @@
 NAME = PmergeMe
 
-SRC	 =	main.cpp \
-		PmergeMe.cpp
+SRC	 =	main.cpp
 
 INC =	PmergeMe.hpp
 
